@@ -46,23 +46,27 @@ All the tables have been prepopulated with the following data
 
 ## Steps to run the API
 
-1. Download and install GCC (http://mingw-w64.org/doku.php) 
+1. Download and install GCC (https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe) 
 
-   Note: GCC is required for access SQLite database. For windows, you can choose x86_64-win32-sjlj installer
+   Note: GCC is required for access SQLite database. For windows, you can choose the following settings 
+
+   Architecture: x86_64
+
+   Threads: win32
+
+   Exceptions: sjlj
 
 2. Add GCC bin directory to PATH (e.g. C:\Program Files\mingw-w64\x86_64-8.1.0-win32-sjlj-rt_v6-rev0\mingw64\bin)
 
-3. Run go get -v github.com/brother14th/locationmapping
+3. Run go get -v github.com/jinzhu/inflection
 
-4. Go to local go package directory (e.g. %gopath%\src\github.com\brother14th\locationmapping\db)
+4. Run go get -v github.com/jinzhu/now
 
-5. Open  userrepository.go, modify the path  C:/Users/hngkh/go/src/github.com/brother14th/locationmapping/db/locationmapping.db 
+5. Run go get -v github.com/brother14th/locationmapping
 
-6. Open locationrepository.go, modify the path  C:/Users/hngkh/go/src/github.com/brother14th/locationmapping/db/locationmapping.db
+6. Open  command prompt, enter locationmapping 
 
-7. Enter  locationmapping in command prompt
-
-8. Use curl or Postman to access the API services (refer to REST API section below)
+7. Use curl or Postman to access the API services (refer to REST API section below)
 
    
 
