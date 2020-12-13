@@ -1,6 +1,9 @@
 package db
 
 import (
+	"os"
+	"path/filepath"
+
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -65,7 +68,9 @@ func (r *userRepository) GetPreferredLocation(username string) (string, error) {
 
 //NewUserRepository creates new repository
 func NewUserRepository() (UserRepository, error) {
-	db, err := gorm.Open(sqlite.Open("C:/Users/hngkh/go/src/github.com/brother14th/locationmapping/db/locationmapping.db"), &gorm.Config{})
+	dbPath := filepath.ToSlash(os.Getenv("GOPATH")) + "/src/github.com/brother14th/locationmapping/db/locationmapping.db"
+	db, err := gorm.Open(sqlite.Open(dbPath), &gorm.Config{})
+
 	if err != nil {
 		panic("failed to connect database")
 	}
